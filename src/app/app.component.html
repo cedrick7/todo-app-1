@@ -1,0 +1,3 @@
+<app-header></app-header>
+<app-todo-input-field (todoInputValueChanged)="addInput($event)"></app-todo-input-field>
+<app-todo-list [taskList]="todoList" (removeTodo)="removeTodoValue($event)"></app-todo-list>

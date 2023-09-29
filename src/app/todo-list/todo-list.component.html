@@ -1,0 +1,81 @@
+<section id="app-todo-list">
+  <div class="container" *ngIf="taskList">
+    <div class="row">
+      <div class="col">
+        <table id="todoList_table" class="table table-striped table-responsive">
+          <!-- <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="th_task_name">ToDo</th>
+                <th scope="col">Operations</th>
+              </tr>
+            </thead> -->
+          <tbody>
+            <!-- <tr>
+              <th scope="row">1</th>
+              <td>
+                <button
+                  type="button"
+                  class="toggle_checked btn_invinsible"
+                  (click)="toggleChecked()"
+                >
+                  <i class="fa-regular fa-circle" *ngIf="checked"></i>
+                  <i class="fa-solid fa-circle-check" *ngIf="!checked"></i>
+                </button>
+              </td>
+              <td class="td_task_name">
+                <span [ngClass]="checked ? 'defaultText' : 'lineThrough'"> dummy 1 </span>
+              </td>
+              <td>
+                <button type="button" class="removeButton btn_invinsible">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr> -->
+
+            <!-- <tr>
+              <th scope="row">2</th>
+              <td class="">
+                <span class="stack">
+                  <input type="checkbox" class="checkbox" name="checkTask" value="" />
+                  <i class="fa-regular fa-circle"></i>
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+              </td>
+              <td class="td_task_name">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet.
+              </td>
+              <td><i class="fa-solid fa-trash"></i></td>
+            </tr> -->
+            <tr *ngFor="let task of taskList; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                <span class="stack">
+                  <input type="checkbox" class="checkbox" name="checkTask" value="" />
+                  <i class="fa-regular fa-circle"></i>
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+              </td>
+              <td class="td_task_name">
+                <span class="span_task">{{ task }}</span>
+              </td>
+              <td>
+                <button type="button" class="removeButton btn_invinsible" (click)="removeTask(i)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
