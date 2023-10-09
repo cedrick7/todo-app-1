@@ -6,21 +6,18 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
   styleUrls: ["./todo-list.component.scss"],
 })
 export class TodoListComponent {
-  // public taskList = [];
-
+  // reflect global list
   @Input() taskList?: string[];
 
+  // remove from list
   @Output() removeTodo = new EventEmitter<number>();
-
   public removeTask(index: number) {
     this.removeTodo.next(index);
-    // this.taskList?.splice(index, 1);
   }
 
+  // toggle task completed
   checked: boolean = true;
-  lineThrough: boolean = false;
   toggleChecked() {
     this.checked = !this.checked;
-    this.lineThrough = !this.lineThrough;
   }
 }

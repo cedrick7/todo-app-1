@@ -8,12 +8,16 @@ import { BehaviorSubject } from "rxjs";
 })
 export class AppComponent {
   title: string = "todoAppPureAngular";
+
+  // initial global list
   todoList: string[] = [];
 
+  // add value from input to list
   addInput(value: string) {
     this.todoList = this.todoList.concat(value);
   }
 
+  // remove from list
   removeTodoValue(i: number) {
     this.todoList = this.todoList.filter((v, index) => index !== i);
   }

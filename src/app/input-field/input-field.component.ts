@@ -7,28 +7,12 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./input-field.component.scss"],
 })
 export class InputFieldComponent {
-  // public inputValue: string = "";
-  // public inputList: string[] = [];
-
+  // add value from input to list
   @Output() todoInputValueChanged = new EventEmitter<string>();
 
+  // submit form
   submitTodo(addTodoForm: NgForm) {
     this.todoInputValueChanged.next(addTodoForm.form.value.addTodo);
     addTodoForm.form.reset();
-
-    // return
-    //     console.log("submit clicked", addTodoForm);
-    //     console.log("inputValue: ", this.inputValue);
-
-    //     this.inputValue = addTodoForm.form.value.addTodo;
-    //     this.inputList.push(this.inputValue);
-
-    //     addTodoForm.form.reset();
-
-    //     console.log("inputList: ", this.inputList);
   }
-
-  // public removeTask(index: number) {
-  //   this.inputList = this.inputList.splice(index, 1);
-  // }
 }
